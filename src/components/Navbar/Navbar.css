@@ -1,0 +1,32 @@
+h2 {
+  color: var(--textColor--);
+  padding-left: 130px;
+  cursor: pointer;
+}
+nav {
+  padding: 0 0px;
+  background-color: var(--bg-color--);
+  height: 45px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  cursor: pointer;
+  width: 80px;
+  height: 50px;
+}
+.nav-list {
+  cursor: pointer;
+  color: var(--textColor--);
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  list-style: none;
+  margin: 10px;
+  padding: 10px;
+}
+li {
+  padding: 10px;
+}

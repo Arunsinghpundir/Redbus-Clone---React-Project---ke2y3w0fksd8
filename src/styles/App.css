@@ -1,0 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,200;0,400;1,100;1,200;1,400&family=Josefin+Sans:wght@300;500&display=swap");
+* {
+  --textColor--: wheat;
+  --bg-color--: #d84f57;
+}
+
+html,
+body {
+  margin: 0;
+  font-family: "Barlow", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+    sans-serif;
+}

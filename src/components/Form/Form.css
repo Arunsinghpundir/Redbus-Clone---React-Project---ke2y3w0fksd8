@@ -1,0 +1,38 @@
+header {
+  font-size: 45px;
+  color: var(--textColor--);
+}
+h1 {
+  margin: 0;
+}
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0;
+  width: 100%;
+  height: 500px;
+  background-image: url(https://st.redbus.in/seo/ind/HeroImageGuideline-V-2-new_1650873408.jpg);
+  background-color: var(--bg-color--);
+}
+
+form {
+  margin: 100px 0 200px 0;
+}
+input {
+  opacity: 0.9;
+  margin: 0;
+  padding: 0 15px;
+  border: 1px solid --textColor--;
+  width: 230px;
+  height: 40px;
+  cursor: pointer;
+}
+button {
+  cursor: pointer;
+  background-color: var(--bg-color--);
+  border: 1px solid var(--textColor--);
+  height: 41.5px;
+  width: 100px;
+}
