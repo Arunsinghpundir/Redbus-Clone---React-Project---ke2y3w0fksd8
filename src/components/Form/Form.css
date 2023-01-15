@@ -35,4 +35,5 @@ button {
   border: 1px solid var(--textColor--);
   height: 41.5px;
   width: 100px;
+  color: var(--textColor--);
 }
