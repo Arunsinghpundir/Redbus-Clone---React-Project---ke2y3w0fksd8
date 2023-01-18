@@ -37,3 +37,6 @@ button {
   width: 100px;
   color: var(--textColor--);
 }
+body {
+  background-color: var(--bg-color--);
+}

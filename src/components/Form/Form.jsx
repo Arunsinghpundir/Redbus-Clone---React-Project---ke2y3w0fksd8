@@ -1,14 +1,16 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./Form.css";
 export const Form = (props)=> {
+    const navigate = useNavigate();
     return(
         <section className="form">
             <header>
                 <h1>Bus Ticket Booking</h1>
             </header>
             <form method="post"  onSubmit={props.handle}>
-               <input type="text"  name="source" placeholder="From"  />
-               <input type="text"  name="destination" placeholder="To" />
+               <input type="text"  name="source" placeholder="From"  defaultValue={"chandigarh"}/>
+               <input type="text"  name="destination" placeholder="To" defaultValue={"delhi"} />
                <input type="date"  name="date" />
                <button type="submit">Search</button>
             </form>

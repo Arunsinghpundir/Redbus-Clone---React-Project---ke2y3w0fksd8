@@ -1,0 +1,35 @@
+.card-box {
+  background-color: var(--bg-color--);
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.card,
+.card-head {
+  background-color: rgba(0, 0, 0, 0.719);
+  color: var(--textColor--);
+  display: flex;
+  margin: 12px;
+  align-items: center;
+  min-width: 1000px;
+  justify-content: space-evenly;
+}
+.card li {
+  font-size: 20px;
+  list-style: none;
+  padding: 10px 55px;
+  text-align: left;
+}
+.card button {
+  font-size: 16px;
+  height: 40px;
+  width: 120px;
+}
+.card-box li {
+  font-size: 20px;
+  list-style: none;
+
+  text-align: left;
+}

@@ -1,6 +1,6 @@
-h2 {
+nav h2 {
   color: var(--textColor--);
-  padding-left: 130px;
+  padding-left: 206px;
   cursor: pointer;
 }
 nav {
