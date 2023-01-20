@@ -8,7 +8,6 @@ const Seat = () => {
    
     let seatArr = [];
     const handleClick = (e)=>{
-     
         if(!seatArr.includes(e.target.id)){
             seatArr.push(e.target.id);
             document.getElementById(e.target.id).style.backgroundColor = "red";
@@ -20,22 +19,26 @@ const Seat = () => {
         console.log(seatArr);
     }
      function calculate(){
-        setTicketPrice(seatArr.length * ticketPrice);
-        if(seatArr.length===0){
-            document.querySelector(".msg").style.display = "Block";
-            setTimeout(() => {
-                document.querySelector(".msg").style.display = "none";
-            }, 2000);
+        if(seatArr.length !== 0){
+        setTimeout(() => {
+          setTicketPrice(seatArr.length * ticketPrice);
+          localStorage.setItem("seatNum", seatArr.length);
+            navigate("View")
+        }, 1);
         }else{
-            setTimeout(() => {
-                navigate("View")
-            }, 1);
+          document.querySelector(".msg").style.display = "Block";
+          setTimeout(() => {
+              document.querySelector(".msg").style.display = "none";
+          }, 2000);
+         
         }
+       
     }
-        localStorage.setItem("TotalPrice" , ticketPrice );
+    localStorage.setItem("TotalPrice" , ticketPrice );
   return (
     <div className="box">
-         <h2>Tickets Price: {localStorage.getItem("TotalPrice")}.00 INR/seat</h2>
+         <h2 className="animate__rubberBand">Tickets Price: {localStorage.getItem("TotalPrice")}.00 INR/seat</h2>
+         <div className="msg animate__shakeX">Plese Select a seat !!</div>
     <table className="table">
       <thead>
         <tr>
@@ -43,7 +46,7 @@ const Seat = () => {
           <td>1</td>
           <td>2</td>
           <td>3</td>
-          <td></td>
+          <br></br>
           <td>4</td>
           <td>5</td>
         </tr>
@@ -54,7 +57,7 @@ const Seat = () => {
           <td id="A1" onClick={handleClick}></td>
           <td id="A2" onClick={handleClick}></td>
           <td id="A3" onClick={handleClick}></td>
-          <td ></td>
+          <br></br>
           <td id="A4" onClick={handleClick}></td>
           <td id="A5" onClick={handleClick}></td>
         </tr>
@@ -63,7 +66,7 @@ const Seat = () => {
           <td id="B1" onClick={handleClick}></td>
           <td id="B2" onClick={handleClick}></td>
           <td id="B3" onClick={handleClick}></td>
-          <td ></td>
+          <br></br>
           <td id="B4" onClick={handleClick}></td>
           <td id="B5" onClick={handleClick}></td>
         </tr>
@@ -72,7 +75,7 @@ const Seat = () => {
           <td id="C1" onClick={handleClick}></td>
           <td id="C2" onClick={handleClick}></td>
           <td id="C3" onClick={handleClick}></td>
-          <td ></td>
+          <br></br>
           <td id="C4" onClick={handleClick}></td>
           <td id="C5" onClick={handleClick}></td>
         </tr>
@@ -81,14 +84,14 @@ const Seat = () => {
           <td id="D1" onClick={handleClick}></td>
           <td id="D2" onClick={handleClick}></td>
           <td id="D3" onClick={handleClick}></td>
-          <td ></td>
+          <br></br>
           <td id="D4" onClick={handleClick}></td>
           <td id="D5" onClick={handleClick}></td>
         </tr>
       </tbody>
     </table>
     <button onClick={calculate}>Proceed</button>
-    <div className="msg"></div>
+  
     </div>
   );
 };

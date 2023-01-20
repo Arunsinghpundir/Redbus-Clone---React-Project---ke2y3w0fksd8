@@ -9,10 +9,18 @@
 }
 
 .table tr td:nth-child(5) {
-  border: none !important;
+  border: none;
 }
 td {
+  height: 25px;
+  width: 25px;
   background-color: var(--bg-color--);
+  transition: 0.4s;
+}
+td:hover {
+  background-color: rgb(218, 49, 26);
+  scale: 1.15;
+  border-radius: 5px;
 }
 .table {
   color: var(--textColor--);
@@ -26,4 +34,15 @@ td {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+.box button {
+  transform: translateX(25px);
+}
+.box h2 {
+  margin: 10px;
+}
+@media (max-width: 520px) {
+  .table {
+    border-spacing: 2em;
+  }
 }

@@ -1,0 +1,14 @@
+#logo2 {
+  cursor: pointer;
+  height: 250px;
+  width: 250px;
+}
+.err {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.err-msg {
+  margin: 5px auto;
+}

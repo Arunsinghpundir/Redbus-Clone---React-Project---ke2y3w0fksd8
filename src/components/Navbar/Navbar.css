@@ -11,6 +11,16 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: 1s;
+}
+nav:hover {
+  scale: 0.98;
+  background: linear-gradient(
+    to right,
+    var(--bg-color--),
+    #c02425,
+    var(--bg-color--)
+  );
 }
 .logo {
   cursor: pointer;
@@ -29,4 +39,16 @@ nav {
 }
 li {
   padding: 10px;
+}
+@media (max-width: 520px) {
+  nav {
+    overflow: hidden;
+  }
+  nav h2 {
+    color: black;
+    padding-right: 20px;
+  }
+  .nav-list {
+    display: none;
+  }
 }
