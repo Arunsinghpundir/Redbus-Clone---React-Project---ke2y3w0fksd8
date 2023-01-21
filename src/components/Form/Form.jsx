@@ -1,8 +1,6 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import "./Form.css";
 export const Form = (props)=> {
-    const navigate = useNavigate();
     return(
         <section className="form">
             <header>

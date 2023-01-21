@@ -14,19 +14,8 @@ const App = () => {
   const navigate = useNavigate();
   async function busData(data) {
     navigate("loader-true");
-    //reversing the date
-    if (data.date) {
-      var MyDate = data.date;
-      var formattedDate = new Date(MyDate);
-      var d = formattedDate.getDate();
-      var m = formattedDate.getMonth();
-      m += 1;
-      var y = formattedDate.getFullYear();
-      var date = y + "-0" + m + "-" + d;
-    }
-
     try {
-      const url = `https://content.newtonschool.co/v1/pr/63b70222af4f30335b4b3b9a/buses?source=${data.source}&destination=${data.destination}&date=${date}`;
+      const url = `https://content.newtonschool.co/v1/pr/63b70222af4f30335b4b3b9a/buses?source=${data.source}&destination=${data.destination}&date=${data.date}`;
       const api = await fetch(url);
       const response = await api.json();
       if (response[0].id) {
@@ -39,22 +28,23 @@ const App = () => {
     }
   }
 
+  //handling form data
   function handleSubmit(e) {
     e.preventDefault();
     const form = e.target;
     const formData = new FormData(form);
+    console.log("1", formData);
     const formJson = Object.fromEntries(formData.entries());
     busData(formJson);
   }
   return (
     <div id="main">
       <Navbar />
-
       <Routes>
         <Route path="loader-true" element={<Loader visibile={true} />} />
         <Route exact path="/" element={<Form handle={handleSubmit} />} />
-        <Route path="ticket" element={<Card data={table} />} />
-        <Route path="ticket/Seat" element={<Seat />} />
+        <Route path={"ticket"} element={<Card data={table} />} />
+        <Route path={"ticket/Seat"} element={<Seat />} />;
         <Route path="ticket/Seat/View" element={<View />} />
         <Route path="err" element={<Error />} />
       </Routes>

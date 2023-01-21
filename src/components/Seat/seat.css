@@ -2,14 +2,21 @@
   border: 1px solid blue;
   width: 1em;
   height: 1em;
+  cursor: pointer;
 }
 
 .table tbody tr td:first-child {
   font-weight: bold;
 }
+.table tbody tr td:first-child:hover {
+  background-color: var(--bg-color--);
+}
 
 .table tr td:nth-child(5) {
   border: none;
+}
+#head-row td:hover {
+  background-color: var(--bg-color--);
 }
 td {
   height: 25px;
@@ -23,6 +30,7 @@ td:hover {
   border-radius: 5px;
 }
 .table {
+  margin: 0 170px;
   color: var(--textColor--);
   border-spacing: 3em;
 }
@@ -35,14 +43,61 @@ td:hover {
   justify-content: center;
   flex-direction: column;
 }
-.box button {
-  transform: translateX(25px);
-}
+
 .box h2 {
   margin: 10px;
 }
+.ticket-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#imp-note {
+  color: var(--textColor--);
+  margin-right: -120px;
+  border-radius: 7px;
+  padding: 10px;
+  width: 220px;
+  background-color: rgba(0, 0, 0, 0.425);
+}
+#prebooked,
+#available {
+  border: 1px solid blue;
+  width: 20px;
+  height: 30px;
+}
+#prebooked {
+  background-color: yellow;
+}
 @media (max-width: 520px) {
+  .ticket-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
   .table {
-    border-spacing: 2em;
+    margin: 50px 0;
+    border-spacing: 2.5em;
+  }
+  #imp-note {
+    margin: 20px 20px 20px 30px;
+  }
+  td {
+    scale: 1.5;
+    height: 10px;
+    width: 30px;
+  }
+  .table tbody tr td:not(:first-child) {
+    width: 3em;
+    height: 1em;
+  }
+  .box button {
+    margin-top: 20px;
+  }
+  td:hover {
+    scale: 1.6;
+    border-radius: 2px;
   }
 }
