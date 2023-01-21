@@ -33,7 +33,8 @@ const Seat = () => {
         }
     }
     useEffect(()=>{
-        JSON.parse(localStorage.getItem("SeatArr")).map((id)=>{
+      let bookedArr =  JSON.parse(localStorage.getItem("SeatArr"));
+       bookedArr.map((id)=>{
           document.getElementById(id).style.cursor = "not-allowed";
            document.getElementById(id).style.backgroundColor = "Yellow";
          })
