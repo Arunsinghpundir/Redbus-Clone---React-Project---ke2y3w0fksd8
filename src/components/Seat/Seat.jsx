@@ -34,14 +34,19 @@ const Seat = () => {
     }
     useEffect(()=>{
       let bookedArr =  JSON.parse(localStorage.getItem("SeatArr"));
+      if(bookedArr){
        bookedArr.map((id)=>{
           document.getElementById(id).style.cursor = "not-allowed";
            document.getElementById(id).style.backgroundColor = "Yellow";
          })
+        }
     },[seatArr])
-  
+    function reset(){
+      localStorage.clear();
+    }
   return (
     <div className="box">
+      <button onClick={reset}>reset</button>
          <h2 >Tickets Price: {localStorage.getItem("ticketPrice")}.00 INR/seat</h2>
          <div className="msg animate__shakeX">Plese Select a seat !!</div>
       <div className="ticket-box">
