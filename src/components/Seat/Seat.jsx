@@ -46,7 +46,7 @@ const Seat = () => {
     }
   return (
     <div className="box">
-      <button onClick={reset}>reset</button>
+      {/* <button onClick={reset}>reset</button> */}
          <h2 >Tickets Price: {localStorage.getItem("ticketPrice")}.00 INR/seat</h2>
          <div className="msg animate__shakeX">Plese Select a seat !!</div>
       <div className="ticket-box">
