@@ -5,7 +5,7 @@ import Loader from "../Loader/Loader";
 export const View = ()=>{
 const nav = useNavigate();
 const from = localStorage.getItem("From").toUpperCase();
-const to = localStorage.getItem("To").toLowerCase();
+const to = localStorage.getItem("To").toUpperCase();
 const time = localStorage.getItem("Time");
 const seat = localStorage.getItem("seatNum");
     return (
