@@ -32,6 +32,7 @@ const Seat = () => {
           }, 2000);
         }
     }
+    
     useEffect(()=>{
       let bookedArr =  JSON.parse(localStorage.getItem("SeatArr"));
       if(bookedArr){

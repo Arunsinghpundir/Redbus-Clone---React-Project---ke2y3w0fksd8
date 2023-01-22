@@ -17,7 +17,7 @@ const App = () => {
     try {
       const url = `https://content.newtonschool.co/v1/pr/63b70222af4f30335b4b3b9a/buses?source=${data.source}&destination=${data.destination}&date=${data.date}`;
       const api = await fetch(url);
-      const response = await api.json();
+      const response = await api.json(); // [{},{},{},{}]
       if (response[0].id) {
         setTable(response);
         navigate("ticket");

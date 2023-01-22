@@ -8,7 +8,6 @@ export const Card = (props) => {
   localStorage.setItem("Time",props.data[0].departureTime);
   const navigate = useNavigate();
   navigate("loader-true");
-  
   return (
     <section className="card-box">
       <div className="card-head">
