@@ -3,7 +3,7 @@ nav h2 {
   padding-left: 206px;
   cursor: pointer;
   width: 100px;
-  animation: show 0.2s;
+  animation: show 0.1s;
 }
 nav {
   padding: 0 0px;
@@ -13,7 +13,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: 1s;
+  transition: 0.3s;
 }
 nav:hover {
   scale: 0.98;
@@ -44,11 +44,11 @@ nav:hover {
   list-style: none;
   margin: 10px;
   padding: 10px;
-  animation: show 0.2s;
+  animation: show 0.1s;
 }
 li {
   padding: 10px;
-  transition: 0.2s;
+  transition: 0.1s;
 }
 li:hover {
   scale: 1.1;
