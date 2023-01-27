@@ -15,7 +15,8 @@ const Seat = (props) => {
           }else{
             document.getElementById(e.target.id).style.cursor = "not-allowed";
           }
-        }else if(seatArr.includes(e.target.id)) {
+        } 
+        if(!seatArr.includes(e.target.id)) {
           if(props.isDisabled){
             seatArr.pop(e.target.id);
             document.getElementById(e.target.id).style.backgroundColor = "var(--bg-color--)";
@@ -55,8 +56,11 @@ const Seat = (props) => {
     <div className="box">
          <h2 >Tickets Price: {localStorage.getItem("ticketPrice")}.00 INR/seat</h2>
          <div className="msg animate__shakeX">Plese Select a seat !!</div>
+         
       <div className="ticket-box">
         <div id="imp-note">
+        {!props.isDisabled?<></>:<><div>You can not modify seats from this section</div> <hr /></>}
+       
           <span id="prebooked">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp; Booked
              <hr />
           <span id="available">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;Available for Booking
