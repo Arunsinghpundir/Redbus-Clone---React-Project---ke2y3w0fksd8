@@ -31,35 +31,41 @@ input {
   border: none;
   border-radius: 6px;
   padding: 0 15px;
-  border: 1px solid --textColor--;
   width: 230px;
   height: 40px;
-  cursor: pointer;
-  color: var(--textColor--);
+  font-size: 18px;
+  color: rgb(0, 0, 0);
   transition: 0.5s;
   text-align: center;
   text-transform: uppercase;
-  background-color: rgba(0, 0, 0, 0.858);
+  opacity: 0.8;
+  background-color: var(--textColor--);
+}
+input::placeholder {
+  text-align: center;
+  color: rgb(0, 0, 0);
 }
 input:hover {
   scale: 1.1;
-  box-shadow: 0 0 10px 1px var(--textColor--) inset;
+  box-shadow: 0 0 10px 2px black;
 }
 input:focus {
   text-transform: capitalize;
-  font-size: 15px;
-  box-shadow: 0 0 20px 1.2px rgba(0, 0, 0, 0.568);
+  font-size: 18px;
+  color: black;
+  box-shadow: 0 0 0px 1.2px rgba(0, 0, 0, 0.568);
 }
 button {
+  color: black;
   cursor: pointer;
   border-radius: 6px;
   border: none;
-  /* background-color: black; */
-  background-color: rgba(0, 0, 0, 0.858);
-  /* border: 1px solid var(--textColor--); */
+  opacity: 0.8;
+  background-color: var(--textColor--);
   height: 41.5px;
-  width: 100px;
-  color: var(--textColor--);
+  min-width: 100px;
+  width: auto;
+  font: 18px bold;
   transition: 1s;
 }
 button:hover {

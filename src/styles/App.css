@@ -6,6 +6,9 @@
 
 html,
 body {
+  cursor: url("https://img.icons8.com/material-rounded/24/000000/blue-pointer.png")
+      2 2,
+    auto;
   margin: 0;
   font-family: "Barlow", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
     sans-serif;
@@ -18,4 +21,7 @@ body {
 }
 .Details h2 {
   text-align: center;
+}
+input {
+  cursor: url("https://img.icons8.com/office/30/null/text-cursor.png") 2 2, auto;
 }
