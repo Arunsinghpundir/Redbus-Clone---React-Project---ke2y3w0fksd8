@@ -1,6 +1,6 @@
 import React from "react";
 import "./View.css"
-import { useNavigate } from "react-router-dom";
+import { useNavigate  } from "react-router-dom";
 import Loader from "../Loader/Loader";
 export const View = ()=>{
 const nav = useNavigate();
@@ -9,6 +9,10 @@ const to = localStorage.getItem("To").toUpperCase();
 const time = localStorage.getItem("Time");
 const seat = localStorage.getItem("seatNum");
 const date = localStorage.getItem("Date");
+
+function navi(){
+    nav("/")
+}
     return (
        <section className="Details">
         <Loader visible={true}/>
@@ -21,7 +25,7 @@ const date = localStorage.getItem("Date");
         </div>
         <h2>Thank You for choosing Red Bus.</h2>
         <h4>Your Tickets will be generated within 2 hours.</h4>
-        <button onClick={()=>nav("/")}>Back to home</button>
+        <button onClick={()=>navi()}>Back to home</button>
        </section>
     )
 }

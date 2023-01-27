@@ -51,18 +51,23 @@ const App = () => {
       <Routes>
         <Route path="loader-true" element={<Loader visibile={true} />} />
         <Route exact path="/" element={<Form handle={handleSubmit} />} />
-        <Route path={"ticket"} element={<Card data={table} />} />
-        <Route path={"ticket/Seat"} element={<Seat isDisabled={isDisable} />} />
-        ;
-        <Route path="ticket/Seat/View" element={<View />} />
-        <Route path="err" element={<Error />} />
-        <Route path="err/allbus" element={<Allbuses />} />
+        <Route exact path={"ticket"} element={<Card data={table} />} />
         <Route
+          exact
+          path={"ticket/Seat"}
+          element={<Seat isDisabled={isDisable} />}
+        />
+        ;
+        <Route exact path="ticket/Seat/View" element={<View />} />
+        <Route exact path="err" element={<Error />} />
+        <Route exact path="err/allbus" element={<Allbuses />} />
+        <Route
+          exact
           path={"err/allbus/Seat"}
           element={<Seat isDisabled={isDisable} />}
         />
         ;
-        <Route path="err/allbus/Seat/View" element={<View />} />
+        <Route exact path="err/allbus/Seat/View" element={<View />} />
       </Routes>
     </div>
   );

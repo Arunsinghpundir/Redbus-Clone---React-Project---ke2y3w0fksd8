@@ -11,16 +11,18 @@ const Seat = (props) => {
           //checking is proceed button is disabled or not
           if(!props.isDisabled){
             seatArr.push(e.target.id);
-            document.getElementById(e.target.id).style.backgroundColor = "red";
+            document.getElementById(e.target.id).style.backgroundColor = "blue";
           }else{
             document.getElementById(e.target.id).style.cursor = "not-allowed";
           }
-        } 
-        if(!seatArr.includes(e.target.id)) {
-          if(props.isDisabled){
-            seatArr.pop(e.target.id);
-            document.getElementById(e.target.id).style.backgroundColor = "var(--bg-color--)";
-            console.log( e.target.id)
+        } else {
+          if(!props.isDisabled){
+          const index = seatArr.indexOf(e.target.id);
+          seatArr.splice(index, 1);
+          document.getElementById(e.target.id).style.backgroundColor = "var(--bg-color--)";
+          }
+          else{
+            document.getElementById(e.target.id).style.cursor = "not-allowed";
           }
         }
         console.log(seatArr);
