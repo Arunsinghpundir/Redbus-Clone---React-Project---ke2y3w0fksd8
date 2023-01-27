@@ -12,3 +12,20 @@
 .err-msg {
   margin: 5px auto;
 }
+.err button {
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 6px;
+  border: none;
+  /* background-color: black; */
+  background-color: rgba(0, 0, 0, 0.858);
+  /* border: 1px solid var(--textColor--); */
+  height: 35.5px;
+  width: 120px;
+  color: var(--textColor--);
+  transition: 1s;
+}
+.err button:hover {
+  scale: 1.1;
+  box-shadow: 0 0 10px 1px var(--textColor--) inset;
+}

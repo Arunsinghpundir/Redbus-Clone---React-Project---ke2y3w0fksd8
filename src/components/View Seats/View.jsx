@@ -8,6 +8,7 @@ const from = localStorage.getItem("From").toUpperCase();
 const to = localStorage.getItem("To").toUpperCase();
 const time = localStorage.getItem("Time");
 const seat = localStorage.getItem("seatNum");
+const date = localStorage.getItem("Date");
     return (
        <section className="Details">
         <Loader visible={true}/>
@@ -16,6 +17,7 @@ const seat = localStorage.getItem("seatNum");
         <div className="h2-card">
             <h3>{from} &rarr; {to}</h3>
             <h3>Bus will depart at {time}.</h3>
+            <h3>{date}</h3>
         </div>
         <h2>Thank You for choosing Red Bus.</h2>
         <h4>Your Tickets will be generated within 2 hours.</h4>

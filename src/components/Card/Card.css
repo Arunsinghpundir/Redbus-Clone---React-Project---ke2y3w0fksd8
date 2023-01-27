@@ -1,6 +1,5 @@
 .card-box {
   background-color: var(--bg-color--);
-  height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,14 +19,15 @@
   color: var(--textColor--);
   display: flex;
   margin: 12px;
-  align-items: center;
+
   min-width: 1000px;
   justify-content: space-evenly;
 }
-.card li {
+.card li,
+.card-head li {
   font-size: 20px;
   list-style: none;
-  padding: 10px 55px;
+  padding: 10px 10px;
   text-align: left;
 }
 .card button {
@@ -42,21 +42,25 @@
   text-align: left;
 }
 @media (max-width: 520px) {
-  .card,
+  .card {
+    min-width: 380px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
   .card-head {
-    min-width: 400px;
+    display: none;
   }
   .card-box button {
     width: 50px;
     height: 40px;
   }
   .card {
-    justify-content: space-between;
-    width: 380px;
+    justify-content: space-around;
   }
   .card li,
   .card-head li {
-    padding: 10px;
-    font-size: 20px;
+    min-width: 175px;
+    padding: 2px 10px 2px 5px;
+    font-size: 25px;
   }
 }

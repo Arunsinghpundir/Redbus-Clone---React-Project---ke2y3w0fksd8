@@ -6,8 +6,13 @@ export const Card = (props) => {
   localStorage.setItem("From",props.data[0].source);
   localStorage.setItem("To",props.data[0].destination);
   localStorage.setItem("Time",props.data[0].departureTime);
+  localStorage.setItem("Date",props.data[0].date);
   const navigate = useNavigate();
   navigate("loader-true");
+  function reset(){
+    //removing disable functionality of proceed btn 
+    document.querySelector("pro-btn").removeAttribute("disabled");
+  }
   return (
     <section className="card-box">
       <div className="card-head">
@@ -21,10 +26,10 @@ export const Card = (props) => {
         <div className="card">
           <li>{key.departureTime}</li>
           <li>{key.arrivalTime}</li>
-          <li>{key.ticketPrice}</li>
+          <li>{key.ticketPrice}.00 INR</li>
           <li>{key.busName}</li>
           <li>
-          <Link to={"Seat"}><button >View Seats</button></Link>
+          <Link to={"Seat"}><button onClick={()=>reset()}>View Seats</button></Link>
           </li>
         </div>
       ))}

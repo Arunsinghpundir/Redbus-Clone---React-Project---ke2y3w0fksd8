@@ -12,3 +12,6 @@
 .h2-card:hover {
   transform: rotateZ(3deg);
 }
+h3 {
+  text-align: center;
+}

@@ -2,18 +2,25 @@ import React, { useEffect, useState } from "react";
 import {useNavigate } from "react-router-dom";
 import "./seat.css";
 
-const Seat = () => {
+const Seat = (props) => {
     const navigate = useNavigate();
     const [ticketPrice, setTicketPrice] = useState(localStorage.getItem("ticketPrice"));
-    let seatArr = [];
+    let seatArr = JSON.parse(localStorage.getItem("SeatArr")) || [];
     const handleClick = (e)=>{
-        if(!seatArr.includes(e.target.id)){
+        if(!seatArr.includes(e.target.id) ){
+          //checking is proceed button is disabled or not
+          if(!props.isDisabled){
             seatArr.push(e.target.id);
             document.getElementById(e.target.id).style.backgroundColor = "red";
-        }else{
+          }else{
+            document.getElementById(e.target.id).style.cursor = "not-allowed";
+          }
+        }else if(seatArr.includes(e.target.id)) {
+          if(props.isDisabled){
             seatArr.pop(e.target.id);
             document.getElementById(e.target.id).style.backgroundColor = "var(--bg-color--)";
             console.log( e.target.id)
+          }
         }
         console.log(seatArr);
         localStorage.setItem("SeatArr", JSON.stringify(seatArr))
@@ -32,7 +39,6 @@ const Seat = () => {
           }, 2000);
         }
     }
-    
     useEffect(()=>{
       let bookedArr =  JSON.parse(localStorage.getItem("SeatArr"));
       if(bookedArr){
@@ -42,12 +48,11 @@ const Seat = () => {
          })
         }
     },[seatArr])
-    function reset(){
-      localStorage.clear();
-    }
+
+   
+    
   return (
     <div className="box">
-      {/* <button onClick={reset}>reset</button> */}
          <h2 >Tickets Price: {localStorage.getItem("ticketPrice")}.00 INR/seat</h2>
          <div className="msg animate__shakeX">Plese Select a seat !!</div>
       <div className="ticket-box">
@@ -108,7 +113,7 @@ const Seat = () => {
         </tbody>
         
       </table>
-      <button onClick={calculate}>Proceed &rarr; </button>
+      <button onClick={calculate} disabled={props.isDisabled}  id="pro-btn">Proceed &rarr; </button>
       </div>
    
   
