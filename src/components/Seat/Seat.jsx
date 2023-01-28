@@ -35,6 +35,7 @@ const Seat = (props) => {
           setTicketPrice(cal); 
           localStorage.setItem("seatNum", seatArr.length);
           navigate("View");
+          props.setDisabled(true);
         }else{
           document.querySelector(".msg").style.display = "Block";
           setTimeout(() => {
@@ -49,6 +50,7 @@ const Seat = (props) => {
           document.getElementById(id).style.cursor = "not-allowed";
            document.getElementById(id).style.backgroundColor = "Yellow";
          })
+       
         }
     },[seatArr])
 

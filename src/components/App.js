@@ -55,7 +55,7 @@ const App = () => {
         <Route
           exact
           path={"ticket/Seat"}
-          element={<Seat isDisabled={isDisable} />}
+          element={<Seat isDisabled={isDisable} setDisabled={setDisabled} />}
         />
         ;
         <Route exact path="ticket/Seat/View" element={<View />} />
@@ -64,7 +64,7 @@ const App = () => {
         <Route
           exact
           path={"err/allbus/Seat"}
-          element={<Seat isDisabled={isDisable} />}
+          element={<Seat isDisabled={isDisable} setDisabled={setDisabled} />}
         />
         ;
         <Route exact path="err/allbus/Seat/View" element={<View />} />
