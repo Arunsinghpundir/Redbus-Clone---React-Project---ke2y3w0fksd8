@@ -13,38 +13,46 @@ import Allbuses from "./AllBuses/Allbuses";
 const App = () => {
   const [table, setTable] = useState([]);
   const [isDisable, setDisabled] = useState(false);
+  const [formData, setFormData] = useState();
   const navigate = useNavigate();
-  async function busData(data) {
-    navigate("loader-true");
-    try {
-      const url = `https://content.newtonschool.co/v1/pr/63b70222af4f30335b4b3b9a/buses?source=${data.source}&destination=${data.destination}&date=${data.date}`;
-      const api = await fetch(url);
-      const response = await api.json(); // [{},{},{},{}]
-      if (response[0].id) {
-        setTable(response);
+
+  React.useEffect(() => {
+    async function busData() {
+      navigate("loader-true");
+      console.log(formData, "mainObj");
+      try {
+        const url = `https://content.newtonschool.co/v1/pr/63b70222af4f30335b4b3b9a/buses?source=${formData.source}&destination=${formData.destination}&date=${formData.date}`;
+        const api = await fetch(url);
+        const response = await api.json(); // [{},{},{},{}]
+        if (response[0].id) {
+          setTable(response);
+          setDisabled(false);
+          navigate("ticket");
+          if (
+            formData.source !== localStorage.getItem("From") &&
+            formData.destination !== localStorage.getItem("To")
+          )
+            localStorage.setItem("SeatArr", JSON.stringify([]));
+        }
+      } catch (err) {
+        console.log(err);
         setDisabled(false);
-        navigate("ticket");
-        if (
-          data.source !== localStorage.getItem("From") &&
-          data.destination !== localStorage.getItem("To")
-        )
-          localStorage.setItem("SeatArr", JSON.stringify([]));
+        navigate("err");
       }
-    } catch (err) {
-      console.log(err);
-      setDisabled(false);
-      navigate("err");
     }
-  }
+    busData();
+  }, [formData]);
 
   //handling form data
   function handleSubmit(e) {
-    e.preventDefault(); // prevent form default value
+    e.preventDefault();
     const form = e.target;
     const formData = new FormData(form);
     const formJson = Object.fromEntries(formData.entries());
-    busData(formJson);
+    // busData(formJson);
+    setFormData(formJson);
   }
+
   return (
     <div id="main">
       <Navbar setDisabled={setDisabled} />

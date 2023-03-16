@@ -6,19 +6,22 @@ const Allbuses = () => {
     const [buses, setBuses] = useState([]);
     const [isSeat, setSeat] = useState(false);
     const navigate = useNavigate();
-    async function busData(data) {
-      try {
-        const url = `https://content.newtonschool.co/v1/pr/63b70222af4f30335b4b3b9a/buses`;
-        const api = await fetch(url);
-        const response = await api.json(); 
-        if (response[0].id) {
-          setBuses(response);
+    React.useEffect(()=>{
+      async function busData(data) {
+        try {
+          const url = `https://content.newtonschool.co/v1/pr/63b70222af4f30335b4b3b9a/buses`;
+          const api = await fetch(url);
+          const response = await api.json(); 
+          if (response[0].id) {
+            setBuses(response);
+          }
+        } catch (err) {
+          console.log(err);
         }
-      } catch (err) {
-        console.log(err);
       }
-    }
-    busData();
+      busData();
+    },[])
+
     function price(ticketPrice,source,destination,departureTime,date){
       if(source !== localStorage.getItem("From") && destination !== localStorage.getItem("To")){
         localStorage.clear();
